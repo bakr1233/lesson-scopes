@@ -1,0 +1,41 @@
+lesson scopes.py
+# LEGB
+# Local, Enclosing, Global, Build-in
+
+local.py
+def test(z):
+    x = 'local x'
+    print(x)
+    print(z)
+
+
+test('local z')
+
+# print(x)
+
+build_in.py
+def my_min():
+    pass
+
+
+m = min([5, 1, 4, 2, 3])
+print(m)
+
+my_min()
+
+
+
+enclosing.py
+def outer():
+    x = 'outer x'
+
+    def inner():
+        nonlocal x
+        x = 'inner x'
+        print(x)
+
+    inner()
+    print(x)
+
+
+outer()
